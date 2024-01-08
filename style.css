@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;1,600&display=swap');
+
+/* --------------------- */
+/*  Movie List  */
+/* --------------------- */
+
+body {
+  background-color: black;
+}
+
+.movie-list {
+  padding-top: 125px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 690px;
+  grid-column-gap: 20px;
+  grid-row-gap: 50px;
+  justify-items: center;
+}
+
+
+
+.movie-card {
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 0 20px rgba(70, 137, 168, 0.8);
+  display: inline-block;
+  background-color: aquamarine;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 350px;
+  padding: 10px;
+  margin: 0 20px 10px 20px;
+  justify-self: center;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-overview {
+  font-weight: bold;
+  font-family: 'Mulish', sans-serif;
+  padding-top: 20px;
+  margin: auto;
+  width: 250px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical
+}
+
+.movie-name {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  min-height: 70px;
+  font-family: 'PT Serif', serif;
+  margin: 10px 0px 10px 3px;
+}
+
+.movie-card img {
+  max-height: 380px;
+  margin: auto;
+  display: block;
+}
+
+.movie-rating {
+  font-weight: bold;
+  font-family: 'Mulish', sans-serif;
+  margin: 15px 0px 0px 5px;
+}
+
+/* --------------------- */
+/*  Modal */
+/* --------------------- */
+
+.dark-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* 어두운 배경의 투명도 조절 */
+  z-index: 999; /* 모달 위에 나타나도록 함 */
+}
+
+.modal {
+  display: none;
+}
+
+#modalCard {
+  border-radius: 10px;
+  background-color: #DAFFFB;
+  width: 900px;
+  height: 600px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#modalCard .card-title {
+  font-family: 'PT Serif', serif;
+  margin: 10px 0px 20px 0px;
+  font-size: 30px;
+  font-weight: bold
+}
+
+#modalCard .card-overview {
+  max-width: 500px;
+  font-size: 20px;
+  font-family: 'Mulish', sans-serif;
+}
+
+#modalCard .card-id {
+  padding: 20px 0px 0px 20px;
+  font-family: 'Mulish', sans-serif;
+  font-size: 15px;
+}
+
+#modalCard .card-rating {
+  font-family: 'Mulish', sans-serif;
+  font-size: 15px;
+}
+
+#modalCard .card-img {
+  padding: 20px;
+}
+
+
+
+/* --------------------- */
+/*  NavBar  */
+/* --------------------- */
+
+#nav {
+  display: flex;
+  background-color: black;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+
+  .btn {
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: white;
+    color: white;
+  }
+
+  .search {
+    border-radius: 10px;
+  }
+
+  .navbar-brand {
+    font-family: 'Luckiest Guy', cursive;
+    margin-right: auto;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+  }
+
+  .logo {
+    height: 40px;
+    padding: 0px 0px 10px 0px;
+  }
+
+}
+
+
+/* --------------------- */
+/*  반응형  */
+/* --------------------- */
+
+@media screen and (max-width: 1400px) {
+  .movie-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  #modalCard {
+    width: 500px;
+  }
+
+  #modalCard .card-overview {
+    font-size: 15px;
+    font-family: 'Mulish', sans-serif;
+  }
+  
+}
+
+@media screen and (max-width: 767px) {
+  #modalCard {
+    width: 300px;
+    font-size: 12px;
+  }
+
+  #modalCard .card-img {
+  width: 166px;
+  height: 229px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .movie-list {
+    grid-template-columns: 1fr;
+  }
+
+
+  #nav {
+    height: 110px;
+    
+    .navbar-brand {
+      font-size: 30px;
+    }
+
+    .logo {
+      height: 40px;
+      padding: 0px 5px 5px 0px;
+    }
+
+    .search {
+      width: 140px;
+    }
+  }
+}
