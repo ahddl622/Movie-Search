@@ -65,14 +65,18 @@ function renderMovies(drawMovies) {
   });
 }
 
-// 입력된 쿼리와 일치하는 영화를 필터링하는 함수
+// 입력된 키워드와 일치하는 영화를 필터링하는 함수
 function searchMovies(keyward) {
-  const drawMovies = movies.filter((movie) => movie.title.toLowerCase().includes(keyward.toLowerCase()));
+  const drawMovies = movies.filter((movie) => 
+    movie.title.toLowerCase().includes(keyward.toLowerCase()) ||
+    movie.original_title.toLowerCase().includes(keyward.toLowerCase())
+  );
 
   // 검색 유효성 검사
   if (drawMovies.length === 0) {
     alert("검색 결과가 없습니다");
   }
+
   renderMovies(drawMovies);
 }
 
