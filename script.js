@@ -4,8 +4,8 @@ const options = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmODA4NmM3MDU2ZGQ3N2JjNzg1NDI3Mjg2MDgzYTQyZCIsInN1YiI6IjY1OTY0Y2Q1ODY5ZTc1NmZhYTA2OGIzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.8FF4v9J3HjX0AGZo8cM9VfSfaGYfnYqLHUHW8KrBWCw",
-  },
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmODA4NmM3MDU2ZGQ3N2JjNzg1NDI3Mjg2MDgzYTQyZCIsInN1YiI6IjY1OTY0Y2Q1ODY5ZTc1NmZhYTA2OGIzMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.8FF4v9J3HjX0AGZo8cM9VfSfaGYfnYqLHUHW8KrBWCw"
+  }
 };
 
 let darkLayer = null;
@@ -67,9 +67,7 @@ function renderMovies(drawMovies) {
 
 // 입력된 쿼리와 일치하는 영화를 필터링하는 함수
 function searchMovies(keyward) {
-  const drawMovies = movies.filter((movie) =>
-    movie.title.toLowerCase().includes(keyward.toLowerCase())
-  );
+  const drawMovies = movies.filter((movie) => movie.title.toLowerCase().includes(keyward.toLowerCase()));
 
   // 검색 유효성 검사
   if (drawMovies.length === 0) {
@@ -82,10 +80,7 @@ function searchMovies(keyward) {
 window.addEventListener("load", function (event) {
   // 영화 데이터를 API에서 가져와서 처리
 
-  fetch(
-    "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
-    options
-  )
+  fetch("https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1", options)
     .then((response) => response.json())
     .then((data) => {
       // 가져온 영화 데이터를 변수에 저장
@@ -95,15 +90,13 @@ window.addEventListener("load", function (event) {
       renderMovies(movies);
 
       // 검색 버튼 클릭 이벤트 처리
-      document
-        .getElementById("search-button")
-        .addEventListener("click", function (event) {
-          event.preventDefault();
-          // 입력된 검색어를 가져와서 영화 검색
-          const searchInput = document.getElementById("searchInput");
-          const filterMovie = searchInput.value;
-          searchMovies(filterMovie);
-        });
+      document.getElementById("search-button").addEventListener("click", function (event) {
+        event.preventDefault();
+        // 입력된 검색어를 가져와서 영화 검색
+        const searchInput = document.getElementById("searchInput");
+        const filterMovie = searchInput.value;
+        searchMovies(filterMovie);
+      });
     })
     .catch((err) => console.error(err));
 });

@@ -17,6 +17,7 @@ body {
   grid-template-rows: 690px;
   grid-column-gap: 20px;
   grid-row-gap: 50px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   justify-items: center;
 }
 
@@ -177,25 +178,25 @@ body {
 /*  반응형  */
 /* --------------------- */
 
-@media screen and (max-width: 1400px) {
-  .movie-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 820px) {
   #modalCard {
-    width: 500px;
+    width: auto;
   }
 
   #modalCard .card-overview {
     font-size: 15px;
-    font-family: 'Mulish', sans-serif;
   }
-  
+
+  #modalCard .card-img {
+    display: none;
+  }
+
+  #modalCard .card-title {
+    font-size: 20px;
+  }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   #modalCard {
     width: 300px;
     font-size: 12px;
@@ -205,13 +206,6 @@ body {
   width: 166px;
   height: 229px;
   }
-}
-
-@media screen and (max-width: 600px) {
-  .movie-list {
-    grid-template-columns: 1fr;
-  }
-
 
   #nav {
     height: 110px;
