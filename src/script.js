@@ -94,6 +94,7 @@ window.addEventListener("load", function (event) {
         event.preventDefault();
         // 입력된 검색어를 가져와서 영화 검색
         const searchInput = document.getElementById("searchInput");
+        searchInput.focus();
         const filterMovie = searchInput.value;
         searchMovies(filterMovie);
       });
@@ -101,6 +102,10 @@ window.addEventListener("load", function (event) {
     .catch((err) => console.error(err));
 });
 
-function reload() {
+const mainLogo = document.getElementById("main-title")
+function refreshViewport() {
+  // 뷰포트 새로고침
   location.reload();
 }
+mainLogo.addEventListener("click", refreshViewport)
+

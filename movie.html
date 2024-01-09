@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <script type="module" src="./src/script.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -23,12 +24,11 @@
   </head>
 
   <body style="background-color: #222">
-    <script src="script.js"></script>
     <header class="main">
       <nav class="navbar bg-body-tertiary" id="nav">
         <div class="container-fluid">
-          <div onclick="reload()">
-            <img class="logo" src="img/1277187_food_movie_popcorn_snack_theater_icon.png" alt="logo" />
+          <div id="main-title">
+            <img class="logo" src="./assets/1277187_food_movie_popcorn_snack_theater_icon.png" alt="logo"/>
             <a class="navbar-brand">Movie Star</a>
           </div>
           <form class="d-flex" role="search">
@@ -46,7 +46,5 @@
     </header>
 
     <section class="movie-list"></section>
-
-    <script src="script.js"></script>
   </body>
 </html>

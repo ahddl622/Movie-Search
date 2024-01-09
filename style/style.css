@@ -163,7 +163,6 @@ body {
     margin-right: auto;
     font-size: 30px;
     color: white;
-    cursor: pointer;
   }
 
   .logo {
@@ -171,6 +170,9 @@ body {
     padding: 0px 0px 10px 0px;
   }
 
+  #main-title {
+    cursor: pointer;
+  }
 }
 
 
