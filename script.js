@@ -12,11 +12,11 @@ let darkLayer = null;
 let movies = [];
 
 // 영화 목록을 렌더링하는 함수
-function renderMovies(filteredMovies) {
+function renderMovies(drawMovies) {
   let movieList = document.querySelector(".movie-list");
   movieList.innerHTML = ""; // 기존 영화 목록 초기화
 
-  filteredMovies.forEach((movie) => {
+  drawMovies.forEach((movie) => {
     let movieCard = document.createElement("div");
     movieCard.innerHTML = `<div class="movie-card" id="${movie.id}">
       <h3 class="movie-name">${movie.title}</h3>
@@ -67,15 +67,15 @@ function renderMovies(filteredMovies) {
 
 // 입력된 쿼리와 일치하는 영화를 필터링하는 함수
 function searchMovies(keyward) {
-  const filteredMovies = movies.filter((movie) =>
+  const drawMovies = movies.filter((movie) =>
     movie.title.toLowerCase().includes(keyward.toLowerCase())
   );
 
   // 검색 유효성 검사
-  if (filteredMovies.length === 0) {
+  if (drawMovies.length === 0) {
     alert("검색 결과가 없습니다");
   }
-  renderMovies(filteredMovies);
+  renderMovies(drawMovies);
 }
 
 // 윈도우 로드 시 실행 할 이벤트 리스너
