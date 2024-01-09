@@ -66,10 +66,15 @@ function renderMovies(filteredMovies) {
 }
 
 // 입력된 쿼리와 일치하는 영화를 필터링하는 함수
-function searchMovies(query) {
+function searchMovies(keyward) {
   const filteredMovies = movies.filter((movie) =>
-    movie.title.toLowerCase().includes(query.toLowerCase())
+    movie.title.toLowerCase().includes(keyward.toLowerCase())
   );
+
+  // 검색 유효성 검사
+  if (filteredMovies.length === 0) {
+    alert("검색 결과가 없습니다");
+  }
   renderMovies(filteredMovies);
 }
 
@@ -90,7 +95,6 @@ window.addEventListener("load", function (event) {
       renderMovies(movies);
 
       // 검색 버튼 클릭 이벤트 처리
-
       document
         .getElementById("search-button")
         .addEventListener("click", function (event) {
