@@ -98,10 +98,11 @@ window.addEventListener("load", function (event) {
         event.preventDefault();
         // 입력된 검색어를 가져와서 영화 검색
         const searchInput = document.getElementById("searchInput");
-        searchInput.focus();
         const filterMovie = searchInput.value;
         searchMovies(filterMovie);
       });
+      // 페이지 로드 시 포커스
+      searchInput.focus()
     })
     .catch((err) => console.error(err));
 });

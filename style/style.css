@@ -153,8 +153,12 @@ body {
     border-color: white;
     color: white;
   }
+  .nav-input {
+    
+  }
 
   .search {
+    
     border-radius: 10px;
   }
 
@@ -225,4 +229,11 @@ body {
       width: 140px;
     }
   }
+}
+
+
+/* webkit */
+
+::-webkit-scrollbar {
+  width: 6px;
 }
