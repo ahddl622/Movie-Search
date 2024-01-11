@@ -8,8 +8,6 @@ const options = {
   }
 };
 
-let darkLayer = null;
-
 let movies = [];
 
 // 영화 목록을 렌더링하는 함수
